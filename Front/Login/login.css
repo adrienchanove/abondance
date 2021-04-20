@@ -1,0 +1,125 @@
+
+/*=========================================== GENERA*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+body
+{
+	background-color: #090909;
+}
+
+img
+{
+	-webkit-filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.5));
+}
+
+/*=========================================== USER LIST*/
+
+#userListFrame
+{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -450px;
+	margin-top: -400px;
+	
+	width: 880px;
+	height: 810px;
+
+	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border: solid 2px #FFFFFF;
+}
+
+#userList
+{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -450px;
+	margin-top: -400px;
+	
+	font-family: "consola";
+
+	max-width: 880px;
+	max-height: 800px;
+	
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.userFrame
+{
+	position: relative;
+
+	width: 600px;
+	height: 150px;
+
+	margin-top: 50px;
+
+	background: #181818;
+	
+	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border-color: #FFFFFF;
+	color: #FFFFFF;
+	border: solid 2px #FFFFFF;
+	
+	font-family: 'roboto mono';
+	font-size: 40px;
+	text-shadow: 0 0 20px rgba(255,255,255,0.5);
+	
+	transition-duration: 0.4s;
+}
+
+.userFrame:hover
+{
+	background: #666666;
+}
+
+.userFrame:active
+{
+	background: #FFFFFF;
+	text-shadow: 0 0 20px rgba(25,25,25,1);
+	color: #090909;
+}
+
+.userIco
+{
+	position: relative;
+	
+	padding: 8px;
+	
+	margin-left: 50px;
+	
+	vertical-align: bottom;
+
+	width: 130px;
+	height: 130px;
+	
+	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border: solid 2px #FFFFFF;
+	
+}
+
+/*=========================================== SCROLLBAR*/
+
+::-webkit-scrollbar
+{
+	width: 35px;
+}
+
+::-webkit-scrollbar-track 
+{
+	border: solid 2px #FFFFFF;
+	box-shadow: 0 0 15px rgba(255,255,255,0.5), inset 0 0 15px rgba(255,255,255,0.5);
+}
+ 
+::-webkit-scrollbar-thumb 
+{
+	background: #FFFFFF;
+	box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+::-webkit-scrollbar-thumb:hover 
+{
+	background: rgba(205,205,205,1);
+	box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
