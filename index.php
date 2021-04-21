@@ -38,7 +38,7 @@ if(isset($_GET) && isset($_GET['p'])){
 			die();
 		}else{
 			$users = getAllUser();
-			require('vue/indexVue.php');
+			require('vue/loginVue.php');
 		}
 
 		break;
@@ -59,25 +59,22 @@ if(isset($_GET) && isset($_GET['p'])){
 		break;
 
 
+
+
 	case 'category':
 
-		if (isset($_GET['valider']) && !empty($_GET['valider'])) {
-			$_SESSION['mode'] = $_GET['mode'];
-			header('Location: .?p=category');
-			die();
-		}else{
-			$categorys = getAllCategory();
-			require('vue/categoryView.php');
-		}
-
+		$categorys = getAllCategory();
+		require('vue/categoryVue.php');
+		
 		break;
 		
+
+
 
 	case 'object':
 		$object = getObjectByCategory($_GET['id_cat']);
 		require('vue/objectVue.php');
 		
-
 		break;
 
 
