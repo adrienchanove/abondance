@@ -34,7 +34,7 @@ if(isset($_GET) && isset($_GET['p'])){
 
 		if (isset($_GET['id']) && !empty($_GET['id'])) {
 			$_SESSION['user_id'] = $_GET['id'];
-			header('Location: .?p=mode');
+			header('Location: .?p=compilated'); //header('Location: .?p=mode');
 			die();
 		}else{
 			$users = getAllUser();
@@ -44,7 +44,67 @@ if(isset($_GET) && isset($_GET['p'])){
 		break;
 
 
+	case 'compilated':
 
+		$rqte = getAllObject();
+		$listeObjet = [];
+		while ($data = $rqte->fetch()) {
+			$listeObjet[] =$data;
+		}
+		$rqte->closeCursor();
+
+		$nomPersonne=null;
+		$rqte = getAllUser();
+		 while ($data = $rqte->fetch()){
+		 	if ($data['id'] == $_SESSION['user_id']) {
+		 		$nomPersonne = $data['nom'];
+		 	}
+		 }
+		 $rqte->closeCursor();
+
+		$allData = [];
+
+		$categoryRoot = getRootCategory();
+		while ($data = $categoryRoot->fetch())
+        {
+        	$data['child'] = [];
+        	$rq = getAllSubCategoryById($data['id']);
+        	while ($subcat = $rq->fetch()){
+
+        		$subcat['objet'] = [];
+        		$requette = getObjectByCategory($subcat['id']);
+        		while ($object = $requette->fetch()){
+        			$subcat['objet'][] = $object;
+        		}
+        		$requette->closeCursor();
+        		$data['child'][] = $subcat;
+        	}
+        	$rq->closeCursor();
+        	$allData[] = $data;
+        }
+        $categoryRoot->closeCursor();
+        
+
+		
+		require('vue/compilatedVue.php');
+		
+		break;
+
+
+	case 'valider':
+		if(isset($_GET['panier']) && isset($_GET['mode']) && !empty($_GET['panier']) && !empty($_GET['mode']))
+		{
+			newFlux($_SESSION['user_id'], $_GET['panier']);
+			echo "<h1>Commande réussi.</h1><br><h2>Vous allez être redirigé dans 5 secondes</h2>";
+			echo "<meta http-equiv=\"refresh\" content = \"7; url = .\" >";
+
+		}else{
+			die("une erreur est survenue lors de l'enregistrement de votre commande prevenez une personne avec de vrais competence  pour ne pas perdre votre temps.<br>Cordialement la direction. ");
+		}
+		break;
+
+
+/*
 	case 'mode':
 
 		if (isset($_GET['choix']) && !empty($_GET['choix'])) {
@@ -62,8 +122,14 @@ if(isset($_GET) && isset($_GET['p'])){
 
 
 	case 'category':
-
-		$categorys = getAllCategory();
+		if(!isset($_GET['id_parent'])){
+			$categorys = getRootCategory();
+		}else{
+			if (categoryAsChild($_GET['id_parent'])) {
+				# code...
+			}
+			$categorys = getAllSubCategoryById($_GET['id_parent']);
+		}
 		require('vue/categoryVue.php');
 		
 		break;
@@ -79,7 +145,7 @@ if(isset($_GET) && isset($_GET['p'])){
 
 
 	
-		
+		*/
 	
 	default:
 		# code...

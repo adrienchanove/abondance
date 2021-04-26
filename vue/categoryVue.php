@@ -16,7 +16,7 @@
         ?>
             <div class="category">
                 <h3>
-                    <a href=".?p=object&id_cat=<?= htmlspecialchars($data['id']) ?>">   <?= htmlspecialchars($data['nom']) ?>  </a>
+                    <a href=".?p=category&id_parent=<?= htmlspecialchars($data['id']) ?>">   <?= htmlspecialchars($data['nom']) ?>  </a>
                 </h3>
                 
             </div>

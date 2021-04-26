@@ -1,0 +1,404 @@
+
+/*=========================================== GENERA*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+body
+{
+	background-color: #090909;
+}
+
+img
+{
+	-webkit-filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.5));
+}
+
+/*=========================================== SIDE INFO*/
+#buyListFrame
+{
+	position: absolute;
+	left: 5px;
+	top: 5px;
+
+	width: 400px;
+	height: 68vh;
+	
+	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border-color: #FFFFFF;
+	color: #FFFFFF;
+	border: solid 2px #FFFFFF;
+}
+
+#userInfoFrame
+{
+	position: absolute;
+	left: 5px;
+	bottom:5px;
+
+	width: 400px;
+	height: 18vh;
+	
+	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border-color: #FFFFFF;
+	color: #FFFFFF;
+	border: solid 2px #FFFFFF;
+}
+
+#userInfoIco
+{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -160px;
+	margin-top: -60px;
+
+	width: 120px;
+}
+
+#userInfoText
+{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	
+	margin-top: -30px;
+	margin-left: -30px;
+	
+	font-family: 'roboto mono';
+	font-size: 25px;
+	text-shadow: 0 0 20px rgba(255,255,255,1);
+	
+	width: 120px;
+}
+
+#buyListTotal
+{
+	position: absolute;
+	bottom: 0;
+	
+	margin: 5px;
+	
+	background-color: #FFFFFF; 
+	box-shadow: 0 0 20px rgba(255,255,255,0.5);
+	
+	width: 390px;
+	height: 40px;
+	
+	text-align: center;
+	color: #090909;
+
+	font-family: 'roboto mono';
+	font-size: 25px;
+	text-shadow: 0 0 8px rgba(10,10,10,1);
+}
+
+#buyList
+{
+	position: absolute;
+	bottom: 50px;
+
+	font-family: 'roboto mono';
+	font-size: 15px;
+	text-shadow: 0 0 20px rgba(255,255,255,1);
+}
+
+#buyButton
+{
+	position: absolute;
+
+	width: 405px;
+	height: 100px;
+
+	bottom: 20vh;
+	left: 5px;
+
+	background: #181818;
+	
+	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border-color: #FFFFFF;
+	color: #FFFFFF;
+	border: solid 2px #FFFFFF;
+	
+	font-family: 'roboto mono';
+	font-size: 20px;
+	text-shadow: 0 0 20px rgba(255,255,255,0.5);
+	
+	transition-duration: 0.4s;
+}
+
+#buyButton:hover
+{
+	background: #666666;
+}
+
+#buyButton:active
+{
+	background: #FFFFFF;
+	text-shadow: 0 0 20px rgba(25,25,25,1);
+	color: #090909;
+}
+
+/*=========================================== OTHER*/
+#buttonExit
+{
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	
+	background: rgba(0,0,0,0);
+	border: solid 0px;
+	
+	transition-duration: 0.4s;
+}
+
+#buttonExit:hover
+{
+	transform: translate(-10px,-10px);
+	opacity: 0.5;
+}
+
+#buttonExitIco
+{
+	width: 150px;
+}
+
+/*=========================================== DEPOSIT/WITHRAW*/
+#actionSelectButtonFrame
+{
+	position: absolute;
+	left: 420px;
+	top: 5px;
+	
+	height: 90px;
+	width: 1000px;
+	
+	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border: solid 2px #FFFFFF;
+	
+	text-align: center;
+}
+
+.buttonAction
+{
+	margin-top: 10px;
+
+	width: 400px;
+	height: 70px;
+
+	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border: solid 2px #FFFFFF;
+	
+	font-family: 'roboto mono';
+	font-size: 20px;
+	text-shadow: 0 0 20px rgba(255,255,255,0.5);
+	
+	color: #FFFFFF;
+	background: #181818;
+	
+	transition-duration: 0.4s;
+}
+
+
+.buttonAction:hover
+{
+	background: #666666;
+}
+
+.buttonAction:active
+{
+	background: #FFFFFF;
+	text-shadow: 0 0 20px rgba(25,25,25,1);
+	color: #090909;
+}
+
+/*=========================================== CATEGORY*/
+
+#categoryFrame
+{
+	position: absolute;
+	left: 420px;
+	top: 110px;
+	
+	height: 300px;
+	width: 1000px;
+	max-height: 300px;
+	
+	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border: solid 2px #FFFFFF;
+	
+	text-align: center;
+	
+	overflow-x: none;
+	overflow-y: scroll;
+}
+
+.categoryButton
+{
+	margin-top: 40px;
+	margin-left: 20px;
+	width: 200px;
+	height: 200px;
+	
+	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border: solid 2px #FFFFFF;
+	background: #181818;
+	
+	color: #FFFFFF;
+	font-family: 'roboto mono';
+	font-size: 20px;
+	text-shadow: 0 0 20px rgba(255,255,255,1);
+	
+	transition-duration: 0.4s;
+}
+
+.categoryButton:hover
+{
+	background: #666666;
+}
+
+.categoryButton:active
+{
+	background: #FFFFFF;
+	text-shadow: 0 0 20px rgba(25,25,25,1);
+	color: #090909;
+}
+
+/*=========================================== OBJECT*/
+
+#objectFrame
+{
+	position: absolute;
+	left: 420px;
+	top: 425px;
+	
+	height: 535px;
+	width: 1000px;
+	
+	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border: solid 2px #FFFFFF;
+	
+	text-align: left;
+	
+	overflow-x: none;
+	overflow-y: scroll;
+	
+	vertical-align: top;
+}
+
+.objectButton
+{
+	margin-top: 20px;
+	margin-left: 10px;
+	width: 780px;
+	height: 40px;
+
+	box-shadow: 0 0 5px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border: solid 1px #FFFFFF;
+	background: #090909;
+	
+	color: #FFFFFF;
+	font-family: 'roboto mono';
+	font-size: 15px;
+	text-shadow: 0 0 10px rgba(255,255,255,1);
+	
+	transition-duration: 0.4s;
+}
+
+.objectButtonPlus
+{
+	margin-top: 10px;
+	width: 40px;
+	height: 40px;
+	
+	box-shadow: 0 0 5px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border: solid 1px #FFFFFF;
+	background: #090909;
+	
+	color: #FFFFFF;
+	font-family: 'roboto mono';
+	font-size: 15px;
+	text-shadow: 0 0 10px rgba(255,255,255,1);
+	
+	transition-duration: 0.4s;
+}
+
+.objectButtonPlus:hover
+{
+	background: #666666;
+}
+
+.objectButtonPlus:active
+{
+	background: #FFFFFF;
+	text-shadow: 0 0 20px rgba(25,25,25,1);
+}
+
+.objectButtonMinus
+{
+	margin-top: 10px;
+	width: 40px;
+	height: 40px;
+	
+	box-shadow: 0 0 5px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border: solid 1px #FFFFFF;
+	background: #090909;
+	
+	color: #FFFFFF;
+	font-family: 'roboto mono';
+	font-size: 15px;
+	text-shadow: 0 0 10px rgba(255,255,255,1);
+	
+	transition-duration: 0.4s;
+}
+
+.objectButtonMinus:hover
+{
+	background: #666666;
+}
+
+.objectButtonMinus:active
+{
+	background: #FFFFFF;
+	text-shadow: 0 0 20px rgba(25,25,25,1);
+}
+
+.objectTotal
+{
+	margin-top: 10px;
+	width: 80px;
+	height: 40px;
+	
+	box-shadow: 0 0 5px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
+	border: solid 1px #FFFFFF;
+	background: #090909;
+	
+	color: #FFFFFF;
+	font-family: 'roboto mono';
+	font-size: 15px;
+	text-shadow: 0 0 10px rgba(255,255,255,1);
+}
+
+/*=========================================== SCROLLBAR*/
+
+::-webkit-scrollbar
+{
+	margin: 5px;
+	width: 25px;
+}
+
+::-webkit-scrollbar-track 
+{
+	border: solid 2px #FFFFFF;
+	box-shadow: 0 0 15px rgba(255,255,255,0.5), inset 0 0 15px rgba(255,255,255,0.5);
+}
+ 
+::-webkit-scrollbar-thumb 
+{
+	background: #FFFFFF;
+	box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+::-webkit-scrollbar-thumb:hover 
+{
+	background: rgba(205,205,205,1);
+	box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
