@@ -96,7 +96,7 @@ if(isset($_GET) && isset($_GET['p'])){
 		{
 			newFlux($_SESSION['user_id'], $_GET['panier']);
 			echo "<h1>Commande réussi.</h1><br><h2>Vous allez être redirigé dans 5 secondes</h2>";
-			echo "<meta http-equiv=\"refresh\" content = \"7; url = .\" >";
+			echo "<meta http-equiv=\"refresh\" content = \"5; url = .\" >";
 
 		}else{
 			die("une erreur est survenue lors de l'enregistrement de votre commande prevenez une personne avec de vrais competence  pour ne pas perdre votre temps.<br>Cordialement la direction. ");
@@ -104,39 +104,49 @@ if(isset($_GET) && isset($_GET['p'])){
 		break;
 
 
-/*
-	case 'mode':
 
-		if (isset($_GET['choix']) && !empty($_GET['choix'])) {
-			$_SESSION['mode'] = $_GET['mode'];
-			header('Location: .?p=category');
-			die();
-		}else{
-			$user = getUserById($_SESSION['user_id']);
-			require('vue/modeVue.php');
-		}
+	case 'admin':
+		$logs = getFlux();
+		if (isset($_GET['action'])) {
+			if ($_GET['action'] == "Nouvelle sous-catégorie" || $_GET['action'] == "Nouveau objet") {
+				if ($_GET['action'] == "Nouvelle sous-catégorie" && !empty($_GET['nom']) && !empty($_GET['parent']) ) {
+					setSubCategory($_GET['nom'], $_GET['parent'] );
+					$message = "enregistrement de la sous-catégorie effectué avec succée (pas sur à 100%)";
+					require('vue/adminVue.php');
 
-		break;
+				}elseif($_GET['action'] == "Nouveau objet" && !empty($_GET['nom']) && !empty($_GET['parent']) && !empty($_GET['marque']) && !empty($_GET['model']) && !empty($_GET['nombre']) && !empty($_GET['cout'])){
 
-
-
-
-	case 'category':
-		if(!isset($_GET['id_parent'])){
-			$categorys = getRootCategory();
-		}else{
-			if (categoryAsChild($_GET['id_parent'])) {
-				# code...
+					setObject($_GET['nom'], $_GET['parent'], $_GET['marque'], $_GET['model'], $_GET['nombre'], $_GET['cout']);
+					$message = "enregistrement de l'objet effectué avec succée (pas sur à 100%)";
+					require('vue/adminVue.php');
+				}else{
+					header('Location: .?p=admin&e=1');
+					die();
+				}
+				
+			}else{
+				header('Location: .?p=admin&e=2');
+				die();
 			}
-			$categorys = getAllSubCategoryById($_GET['id_parent']);
+		}else{
+			
+			require('vue/adminVue.php');
 		}
-		require('vue/categoryVue.php');
+
+		break;
+
+
+
+
+	case 'logpdf':
+		$logs = getFlux();
+		require('vue/pdfLogVue.php');
 		
 		break;
 		
 
 
-
+/*
 	case 'object':
 		$object = getObjectByCategory($_GET['id_cat']);
 		require('vue/objectVue.php');
@@ -148,7 +158,8 @@ if(isset($_GET) && isset($_GET['p'])){
 		*/
 	
 	default:
-		# code...
+		header('Location: .?p=nom');
+		die();
 		break;
 	}
 

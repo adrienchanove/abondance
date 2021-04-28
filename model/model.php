@@ -61,6 +61,19 @@ function categoryAsChild($idParent)
 	return false;
 }
 
+function getSubCategory(){
+	global $bdd;
+	$req = $bdd->query('SELECT * FROM category WHERE idParent IS NOT NULL');
+	return $req;
+}
+
+function setSubCategory($nom, $idParent){
+	global $bdd;
+	$req = $bdd->query("INSERT INTO category (nom, idparent) VALUES ('$nom',$idParent)");
+}
+
+
+
 
 
 
@@ -79,8 +92,16 @@ function getAllObject()
 	return $req;
 }
 
+function setObject($nom, $parent, $marque, $model, $nombre, $cout){
+	global $bdd;
+	$requette ="INSERT INTO `object`( `idcategory`, `nom`, `marque`, `model`, `cout`, `nombre`) VALUES ($parent,'$nom','$marque','$model',$cout,$nombre)";
+	//echo $requette;
+	$req = $bdd->query($requette);
+}
 
 
+
+// FLUX
 function newFlux($idPersonne, $panier){
 	//INSERT INTO table (nom_colonne_1, nom_colonne_2, ...
 	//VALUES ('valeur 1', 'valeur 2', ...)
@@ -108,7 +129,17 @@ function newFlux($idPersonne, $panier){
 			die("une erreur est survenue lors de la mise a jour du nombre. Code erreur: #02#");
 		}
 		
-	}
+	}	
+}
 
-	
+
+function getFlux(){//recuperation des log de flux.
+	global $bdd;
+
+	$req = $bdd->query("SELECT f.id, f.date, f.mode, u.nom, o.nom 'nomObjet', o.marque, o.model, o.cout, f.nombre FROM `flux` f JOIN user u ON u.id = f.idpers JOIN object o ON o.id = f.idobject ORDER BY f.id DESC");
+	$liste=[];
+	while($data = $req->fetch()){
+		$liste[] = $data;
+	}
+	return $liste;
 }
