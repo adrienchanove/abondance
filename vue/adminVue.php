@@ -8,7 +8,7 @@
     </head>
         
     <body>
-        <div id="message"><?php if (isset($message)) {echo $message; } ?>
+        <div id="message"><?php if (isset($_GET['m'])) {echo "Envoie réussi!"; } ?>
         </div>
         <div id="formulaire">
             <div id="form-category">
@@ -47,7 +47,7 @@
                         <label for="parent">Catégorie de l'objet:</label>
                         <select name="parent">
                             <?php 
-                            $req = getSubCategory();
+                            $req = getSubCategoryWParent();
                             while ($data = $req->fetch()) {
                                 echo '<option value="'.$data['id'].'" >'.$data['nom'].'</option> ';
                             }

@@ -14,12 +14,6 @@ require('model/model.php');//require de la connexion à la Base De Donnée
 
 
 
-// ##__TRAITEMENT__##
-
-
-
-
-
 
 //    ###__VUE__##
 //Les vues affichent à l'utilisateur des informations sur le modèle
@@ -117,8 +111,9 @@ if(isset($_GET) && isset($_GET['p'])){
 				}elseif($_GET['action'] == "Nouveau objet" && !empty($_GET['nom']) && !empty($_GET['parent']) && !empty($_GET['marque']) && !empty($_GET['model']) && !empty($_GET['nombre']) && !empty($_GET['cout'])){
 
 					setObject($_GET['nom'], $_GET['parent'], $_GET['marque'], $_GET['model'], $_GET['nombre'], $_GET['cout']);
-					$message = "enregistrement de l'objet effectué avec succée (pas sur à 100%)";
-					require('vue/adminVue.php');
+					$message = "enregistrement:OK";
+					header('Location: .?p=admin&m=1');
+					die();
 				}else{
 					header('Location: .?p=admin&e=1');
 					die();

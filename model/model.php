@@ -72,6 +72,13 @@ function setSubCategory($nom, $idParent){
 	$req = $bdd->query("INSERT INTO category (nom, idparent) VALUES ('$nom',$idParent)");
 }
 
+function getSubCategoryWParent(){
+	global $bdd;
+	$req = $bdd->query('SELECT * FROM category WHERE idParent IS NOT NULL');
+	return $req;
+}
+
+
 
 
 
