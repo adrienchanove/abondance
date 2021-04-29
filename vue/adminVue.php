@@ -8,7 +8,7 @@
     </head>
         
     <body>
-        <div id="message"><?php if (isset($_GET['m'])) {echo "Envoie réussi!"; } ?>
+        <div id="message"><?php if (isset($_GET['m'])) {echo "Envoie réussi!"; } ?><?php if (isset($_GET['e'])&&$_GET['e']==1) {echo "Une erreur est survenue lors de la saisi des donnée,(manque de certains champs ou le cout à 0)"; } ?>
         </div>
         <div id="formulaire">
             <div id="form-category">
