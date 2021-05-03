@@ -64,12 +64,12 @@
                         <input type="text" name="model"><br>
 
                         <label for="nombre">Nombre d'objet:</label>
-                        <input type="number" name="nombre" value="1"><br>
+                        <input type="number" name="nombre" value="1" required="true"><br>
 
                         <label for="cout">Prix de l'objet:(ex:1.20)</label>
-                        <input type="text" name="cout"><br>
+                        <input type="text" name="cout" required="true"><br>
 
-                        <input type="submit" name="action" value="Nouveau objet" required="true">
+                        <input type="submit" name="action" value="Nouveau objet">
                             
                     </form>
                 </center>
