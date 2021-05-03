@@ -108,13 +108,15 @@ if(isset($_GET) && isset($_GET['p'])){
 					$message = "enregistrement de la sous-catégorie effectué avec succée (pas sur à 100%)";
 					require('vue/adminVue.php');
 
-				}elseif($_GET['action'] == "Nouveau objet" && !empty($_GET['nom']) && !empty($_GET['parent']) && !empty($_GET['marque']) && !empty($_GET['model']) && !empty($_GET['nombre']) && !empty($_GET['cout'])){
+				}elseif($_GET['action'] == "Nouveau objet" && !empty($_GET['nom']) && !empty($_GET['parent']) && !empty($_GET['nombre']) && (!empty($_GET['cout']) || $GET['cout'] == 0) ){
+
 
 					setObject($_GET['nom'], $_GET['parent'], $_GET['marque'], $_GET['model'], $_GET['nombre'], $_GET['cout']);
 					$message = "enregistrement:OK";
 					header('Location: .?p=admin&m=1');
 					die();
 				}else{
+
 					header('Location: .?p=admin&e=1');
 					die();
 				}
