@@ -51,7 +51,7 @@
                             <?php 
                             $req = getSubCategoryWParent();
                             while ($data = $req->fetch()) {
-                                echo '<option value="'.$data['id'].'" >'.$data['nom'].'</option> ';
+                                echo '<option value="'.$data['id'].'" >'.$data['nomParent'].'--'.$data['nom'].'</option> ';
                             }
                             $req->closeCursor();
                              ?>

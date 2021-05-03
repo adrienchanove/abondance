@@ -74,7 +74,7 @@ function setSubCategory($nom, $idParent){
 
 function getSubCategoryWParent(){
 	global $bdd;
-	$req = $bdd->query('SELECT * FROM category WHERE idParent IS NOT NULL');
+	$req = $bdd->query('SELECT cc.id id, cc.nom nom, cp.nom nomParent FROM category cc JOIN category cp on cc.idparent = cp.id WHERE cc.idParent IS NOT NULL');
 	return $req;
 }
 
