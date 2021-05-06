@@ -2,14 +2,22 @@
 /*=========================================== GENERA*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
+html
+{
+	width: 100%;
+	height: 100%;
+	box-shadow: inset 0 0 200px rgba(0,0,0,1);
+}
+
 body
 {
-	background-color: #090909;
+	background: repeating-linear-gradient(#002C07, #002C07 5px, #00530D 5px, #00530D 10px);
+	
 }
 
 img
 {
-	-webkit-filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.5));
+	-webkit-filter: drop-shadow(0px 0px 25px rgba(0,255,41, 0.6));
 }
 
 /*=========================================== SIDE INFO*/
@@ -20,27 +28,26 @@ img
 	top: 5px;
 
 	width: 400px;
-	height: 68vh;
+	height: 450px;
 	
-	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
-	border-color: #FFFFFF;
-	color: #FFFFFF;
-	border: solid 2px #FFFFFF;
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	text-shadow: 0 0 20px rgba(0,255,41,1);
+	color: #00FF29;
+	border: solid 2px #00FF29;
 }
 
 #userInfoFrame
 {
 	position: absolute;
 	left: 5px;
-	bottom:5px;
+	bottom:130px;
 
 	width: 400px;
-	height: 18vh;
+	height: 75px;
 	
-	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
-	border-color: #FFFFFF;
-	color: #FFFFFF;
-	border: solid 2px #FFFFFF;
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	color: #00FF29;
+	border: solid 2px #00FF29;
 }
 
 #userInfoIco
@@ -49,9 +56,9 @@ img
 	left: 50%;
 	top: 50%;
 	margin-left: -160px;
-	margin-top: -60px;
+	margin-top: -32px;
 
-	width: 120px;
+	width: 60px;
 }
 
 #userInfoText
@@ -60,12 +67,12 @@ img
 	left: 50%;
 	top: 50%;
 	
-	margin-top: -30px;
-	margin-left: -30px;
+	margin-top: -25px;
+	margin-left: -80px;
 	
 	font-family: 'roboto mono';
-	font-size: 25px;
-	text-shadow: 0 0 20px rgba(255,255,255,1);
+	font-size: 18px;
+	text-shadow: 0 0 8px rgba(10,255,10,1);
 	
 	width: 120px;
 }
@@ -77,14 +84,15 @@ img
 	
 	margin: 5px;
 	
-	background-color: #FFFFFF; 
-	box-shadow: 0 0 20px rgba(255,255,255,0.5);
+	background-color: #00FF29; 
+	box-shadow: 0 0 20px rgba(0,255,41,0.8);
 	
 	width: 390px;
 	height: 40px;
 	
 	text-align: center;
-	color: #090909;
+	color: #00530D;
+	
 
 	font-family: 'roboto mono';
 	font-size: 25px;
@@ -98,7 +106,7 @@ img
 
 	font-family: 'roboto mono';
 	font-size: 15px;
-	text-shadow: 0 0 20px rgba(255,255,255,1);
+	text-shadow: 0 0 10px rgba(10,255,10,1);
 }
 
 #buyButton
@@ -106,43 +114,40 @@ img
 	position: absolute;
 
 	width: 405px;
-	height: 100px;
+	height: 87px;
 
-	bottom: 20vh;
+	bottom: 215px;
 	left: 5px;
 
-	background: #181818;
+	background: rgba(0,90,31,0.8);
 	
-	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
-	border-color: #FFFFFF;
-	color: #FFFFFF;
-	border: solid 2px #FFFFFF;
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	color: #00FF29;
+	border: solid 2px #00FF29;
 	
 	font-family: 'roboto mono';
 	font-size: 20px;
-	text-shadow: 0 0 20px rgba(255,255,255,0.5);
+	text-shadow: 0 0 10px rgba(0,255,40,1);
 	
 	transition-duration: 0.4s;
 }
 
 #buyButton:hover
 {
-	background: #666666;
+	background: rgba(0,190,41,0.8);
 }
 
 #buyButton:active
 {
-	background: #FFFFFF;
-	text-shadow: 0 0 20px rgba(25,25,25,1);
-	color: #090909;
+	background: rgba(0,90,31,0.8);
 }
 
 /*=========================================== OTHER*/
 #buttonExit
 {
 	position: absolute;
-	bottom: 5px;
-	right: 5px;
+	bottom: 10px;
+	left: 0px;
 	
 	background: rgba(0,0,0,0);
 	border: solid 0px;
@@ -152,13 +157,12 @@ img
 
 #buttonExit:hover
 {
-	transform: translate(-10px,-10px);
 	opacity: 0.5;
 }
 
 #buttonExitIco
 {
-	width: 150px;
+	width: 110px;
 }
 
 /*=========================================== DEPOSIT/WITHRAW*/
@@ -169,10 +173,10 @@ img
 	top: 5px;
 	
 	height: 90px;
-	width: 1000px;
+	width: 935px;
 	
-	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
-	border: solid 2px #FFFFFF;
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	border: solid 2px #00FF29;
 	
 	text-align: center;
 }
@@ -184,15 +188,15 @@ img
 	width: 400px;
 	height: 70px;
 
-	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
-	border: solid 2px #FFFFFF;
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	border: solid 2px #00FF29;
 	
 	font-family: 'roboto mono';
 	font-size: 20px;
 	text-shadow: 0 0 20px rgba(255,255,255,0.5);
 	
-	color: #FFFFFF;
-	background: #181818;
+	color: #00FF29;
+	background: rgba(0,90,31,0.8);
 	
 	transition-duration: 0.4s;
 }
@@ -200,14 +204,12 @@ img
 
 .buttonAction:hover
 {
-	background: #666666;
+	background: rgba(0,190,41,0.8);
 }
 
 .buttonAction:active
 {
-	background: #FFFFFF;
-	text-shadow: 0 0 20px rgba(25,25,25,1);
-	color: #090909;
+	background: rgba(0,90,31,0.8);
 }
 
 /*=========================================== CATEGORY*/
@@ -218,12 +220,12 @@ img
 	left: 420px;
 	top: 110px;
 	
-	height: 300px;
-	width: 1000px;
+	height: 250px;
+	width: 935px;
 	max-height: 300px;
 	
-	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
-	border: solid 2px #FFFFFF;
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	border: solid 2px #00FF29;
 	
 	text-align: center;
 	
@@ -234,15 +236,15 @@ img
 .categoryButton
 {
 	margin-top: 40px;
-	margin-left: 20px;
+	margin-left: 25px;
 	width: 200px;
 	height: 200px;
 	
-	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
-	border: solid 2px #FFFFFF;
-	background: #181818;
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	border: solid 2px #00FF29;
+	background: rgba(0,90,31,0.8);
 	
-	color: #FFFFFF;
+	color: #00FF29;
 	font-family: 'roboto mono';
 	font-size: 20px;
 	text-shadow: 0 0 20px rgba(255,255,255,1);
@@ -252,14 +254,12 @@ img
 
 .categoryButton:hover
 {
-	background: #666666;
+	background: rgba(0,190,41,0.8);
 }
 
 .categoryButton:active
 {
-	background: #FFFFFF;
-	text-shadow: 0 0 20px rgba(25,25,25,1);
-	color: #090909;
+	background: rgba(0,90,31,0.8);
 }
 
 /*=========================================== OBJECT*/
@@ -268,13 +268,13 @@ img
 {
 	position: absolute;
 	left: 420px;
-	top: 425px;
+	top: 375px;
 	
-	height: 535px;
-	width: 1000px;
+	height: 375px;
+	width: 935px;
 	
-	box-shadow: 0 0 20px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
-	border: solid 2px #FFFFFF;
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	border: solid 2px #00FF29;
 	
 	text-align: left;
 	
@@ -288,16 +288,16 @@ img
 {
 	margin-top: 20px;
 	margin-left: 10px;
-	width: 780px;
+	width: 680px;
 	height: 40px;
 
-	box-shadow: 0 0 5px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
-	border: solid 1px #FFFFFF;
-	background: #090909;
+	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
+	border: solid 1px #00FF29;
+	background: rgba(0,90,31,0.8);
 	
-	color: #FFFFFF;
+	color: #00FF29;
 	font-family: 'roboto mono';
-	font-size: 15px;
+	font-size: 14px;
 	text-shadow: 0 0 10px rgba(255,255,255,1);
 	
 	transition-duration: 0.4s;
@@ -309,11 +309,11 @@ img
 	width: 40px;
 	height: 40px;
 	
-	box-shadow: 0 0 5px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
-	border: solid 1px #FFFFFF;
-	background: #090909;
+	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
+	border: solid 1px #00FF29;
+	background: rgba(0,90,31,0.8);
 	
-	color: #FFFFFF;
+	color: #00FF29;
 	font-family: 'roboto mono';
 	font-size: 15px;
 	text-shadow: 0 0 10px rgba(255,255,255,1);
@@ -323,13 +323,12 @@ img
 
 .objectButtonPlus:hover
 {
-	background: #666666;
+	background: rgba(0,190,41,0.8);
 }
 
 .objectButtonPlus:active
 {
-	background: #FFFFFF;
-	text-shadow: 0 0 20px rgba(25,25,25,1);
+	background: rgba(0,90,31,0.8);
 }
 
 .objectButtonMinus
@@ -338,11 +337,11 @@ img
 	width: 40px;
 	height: 40px;
 	
-	box-shadow: 0 0 5px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
-	border: solid 1px #FFFFFF;
-	background: #090909;
+	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
+	border: solid 1px #00FF29;
+	background: rgba(0,90,31,0.8);
 	
-	color: #FFFFFF;
+	color: #00FF29;
 	font-family: 'roboto mono';
 	font-size: 15px;
 	text-shadow: 0 0 10px rgba(255,255,255,1);
@@ -352,13 +351,12 @@ img
 
 .objectButtonMinus:hover
 {
-	background: #666666;
+	background: rgba(0,190,41,0.8);
 }
 
 .objectButtonMinus:active
 {
-	background: #FFFFFF;
-	text-shadow: 0 0 20px rgba(25,25,25,1);
+	background: rgba(0,90,31,0.8);
 }
 
 .objectTotal
@@ -367,11 +365,11 @@ img
 	width: 80px;
 	height: 40px;
 	
-	box-shadow: 0 0 5px rgba(255,255,255,0.5), inset 0 0 20px rgba(255,255,255,0.5);
-	border: solid 1px #FFFFFF;
-	background: #090909;
+	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
+	border: solid 1px #00FF29;
+	background: rgba(0,90,31,0.8);
 	
-	color: #FFFFFF;
+	color: #00FF29;
 	font-family: 'roboto mono';
 	font-size: 15px;
 	text-shadow: 0 0 10px rgba(255,255,255,1);
@@ -381,24 +379,25 @@ img
 
 ::-webkit-scrollbar
 {
-	margin: 5px;
-	width: 25px;
+	width: 35px;
+	border: solid 1px #00FF29;
+	box-shadow: 0 0 25px rgba(0,190,41,0.8);
 }
 
 ::-webkit-scrollbar-track 
 {
-	border: solid 2px #FFFFFF;
-	box-shadow: 0 0 15px rgba(255,255,255,0.5), inset 0 0 15px rgba(255,255,255,0.5);
+	border: solid 2px #00FF29;
+	box-shadow: 0 0 15px rgba(0,190,41,0.8), inset 0 0 25px rgba(0,190,41,0.8);
 }
  
 ::-webkit-scrollbar-thumb 
 {
-	background: #FFFFFF;
-	box-shadow: 0 0 15px rgba(255,255,255,0.5);
+	background: #00FF29;
+	box-shadow: 0 0 15px rgba(0,255,41,0.8), inset 0 0 25px rgba(0,190,41,0.8);
 }
 
 ::-webkit-scrollbar-thumb:hover 
 {
-	background: rgba(205,205,205,1);
-	box-shadow: 0 0 15px rgba(255,255,255,0.5);
+	background: rgba(0,255,41,0.7);
+	box-shadow: 0 0 15px rgba(0,255,41,0.8), inset 0 0 25px rgba(0,190,41,0.8);
 }
