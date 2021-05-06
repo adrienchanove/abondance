@@ -40,7 +40,7 @@ img
 {
 	position: absolute;
 	left: 5px;
-	bottom:130px;
+	top: 560px;
 
 	width: 400px;
 	height: 75px;
@@ -116,7 +116,7 @@ img
 	width: 405px;
 	height: 87px;
 
-	bottom: 215px;
+	top: 465px;
 	left: 5px;
 
 	background: rgba(0,90,31,0.8);
@@ -146,8 +146,8 @@ img
 #buttonExit
 {
 	position: absolute;
-	bottom: 10px;
-	left: 0px;
+	top: 645px;
+	left: 30px;
 	
 	background: rgba(0,0,0,0);
 	border: solid 0px;
@@ -161,6 +161,50 @@ img
 }
 
 #buttonExitIco
+{
+	width: 110px;
+}
+
+#buttonAdd
+{
+	position: absolute;
+	top: 645px;
+	left: 150px;
+	
+	background: rgba(0,0,0,0);
+	border: solid 0px;
+	
+	transition-duration: 0.4s;
+}
+
+#buttonAdd:hover
+{
+	opacity: 0.5;
+}
+
+#buttonAddIco
+{
+	width: 110px;
+}
+
+#buttonSearch
+{
+	position: absolute;
+	top: 645px;
+	left: 270px;
+	
+	background: rgba(0,0,0,0);
+	border: solid 0px;
+	
+	transition-duration: 0.4s;
+}
+
+#buttonSearch:hover
+{
+	opacity: 0.5;
+}
+
+#buttonSearchIco
 {
 	width: 110px;
 }
