@@ -51,10 +51,39 @@ img
 
 input
 {
-	margin-top: 8px;
+
+	margin-top: 7px;
 
 	width: 260px;
 	height: 25px;
+	background: rgba(0,90,31,0.8);
+	
+	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
+	
+	text-shadow: 0 0 20px rgba(0,255,41,1);
+	color: #00FF29;
+	font-family: 'roboto mono';
+	
+	font-size: 15px;
+	
+	border: solid 2px #00FF29;
+}
+
+select
+{
+	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
+	
+	text-shadow: 0 0 20px rgba(0,255,41,1);
+	color: #00FF29;
+	font-family: 'roboto mono';
+	
+	font-size: 15px;
+	
+	margin-top: 7px;
+	
+	border: solid 2px #00FF29;
+	
+	background: rgba(0,90,31,0.8);
 }
 
 /*=========================================== MESSAGE*/

@@ -3,15 +3,17 @@
     <head>
         <meta charset="utf-8" />
         <title>Administration</title>
-        <link href="CSS/***.css" rel="stylesheet" /> 
+        <link href="CSS/admin.css.css" rel="stylesheet" /> 
 
     </head>
         
     <body>
         <div id="message">
+			<div id="messageText">
             <?php if (isset($_GET['m'])) {echo "Envoie réussi!"; } ?>
             <?php if (isset($_GET['e'])&&$_GET['e']=='1') {echo "Une erreur est survenue lors de la saisi des donnée, (manque de certains champs ou le cout est à 0)";  } ?>
-        </div>
+			</div>
+		</div>
         <div id="formulaire">
             <div id="form-category">
                 <center>
@@ -32,7 +34,7 @@
                              ?>
                         </select> <br>
 
-                        <input type="submit" name="action" value="Nouvelle sous-catégorie">
+                        <input class="buttonSubmit" type="submit" name="action" value="Nouvelle sous-catégorie">
 
                     </form>
                 </center>
@@ -69,7 +71,7 @@
                         <label for="cout">Prix de l'objet:(ex:1.20)</label>
                         <input type="text" name="cout" required="true"><br>
 
-                        <input type="submit" name="action" value="Nouveau objet">
+                        <input class="buttonSubmit" type="submit" name="action" value="Nouveau objet">
                             
                     </form>
                 </center>
@@ -80,42 +82,47 @@
         <br> <br>
         <div id="logdiv">
             <center>
-                <a href=".?p=logpdf" target="_blank">Version PDF ici</a>
-                <table border=10>
-                    <caption>LOG DES FLUX</caption>
-                    <tr>
-                        <th>Id</th>
-                        <th>Date</th>
-                        <th>Sens du flux</th>
-                        <th>Nom</th>
-                        <th>Nom de l'objet</th>
-                        <th>Marque</th>
-                        <th>Model</th>
-                        <th>Cout UNIT</th>
-                        <th>Nombre</th>
-                        <th>Cout TOT</th>
-                    </tr>
-                    
-                    <?php 
-                        foreach ($logs as $flux) {
-                            //print_r($flux);
-                            echo "<tr>";
+				<div id="PDFButton">
+					<div id="PDFButtonText">
+						<a href=".?p=logpdf" target="_blank">Version PDF ici</a>
+                	</div>
+				</div>
+				<div id="tableFrame"> 
+					<table border=1>
+						<tr>
+							<th>Id</th>
+							<th>Date</th>
+							<th>Sens du flux</th>
+							<th>Nom</th>
+							<th>Nom de l'objet</th>
+							<th>Marque</th>
+							<th>Model</th>
+							<th>Cout UNIT</th>
+							<th>Nombre</th>
+							<th>Cout TOT</th>
+						</tr>
+						
+						<?php 
+							foreach ($logs as $flux) {
+								//print_r($flux);
+								echo "<tr>";
 
-                            echo "<td>".$flux['id']."</td>";
-                            echo "<td>".$flux['date']."</td>";
-                            echo "<td>".$flux['mode']."</td>";
-                            echo "<td>".$flux['nom']."</td>";
-                            echo "<td>".$flux['nomObjet']."</td>";
-                            echo "<td>".$flux['marque']."</td>";
-                            echo "<td>".$flux['model']."</td>";
-                            echo "<td>".$flux['cout']."</td>";
-                            echo "<td>".$flux['nombre']."</td>";
-                            echo "<td>".$flux['cout']*$flux['nombre']."</td>";
+								echo "<td>".$flux['id']."</td>";
+								echo "<td>".$flux['date']."</td>";
+								echo "<td>".$flux['mode']."</td>";
+								echo "<td>".$flux['nom']."</td>";
+								echo "<td>".$flux['nomObjet']."</td>";
+								echo "<td>".$flux['marque']."</td>";
+								echo "<td>".$flux['model']."</td>";
+								echo "<td>".$flux['cout']."</td>";
+								echo "<td>".$flux['nombre']."</td>";
+								echo "<td>".$flux['cout']*$flux['nombre']."</td>";
 
-                            echo "</tr>";
-                        }
-                     ?>
-                </table>
+								echo "</tr>";
+							}
+						 ?>
+					</table>
+				</div>
             </center>
             
             
