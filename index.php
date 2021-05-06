@@ -89,8 +89,7 @@ if(isset($_GET) && isset($_GET['p'])){
 		if(isset($_GET['panier']) && isset($_GET['mode']) && !empty($_GET['panier']) && !empty($_GET['mode']))
 		{
 			newFlux($_SESSION['user_id'], $_GET['panier']);
-			echo "<h1>Commande réussi.</h1><br><h2>Vous allez être redirigé dans 5 secondes</h2>";
-			echo "<meta http-equiv=\"refresh\" content = \"5; url = .\" >";
+			require('vue/waitVue.php');
 
 		}else{
 			die("une erreur est survenue lors de l'enregistrement de votre commande prevenez une personne avec de vrais competence  pour ne pas perdre votre temps.<br>Cordialement la direction. ");
