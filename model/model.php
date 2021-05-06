@@ -1,15 +1,22 @@
 <?php
+
+//connexion préliminaire à la base de donnée
 try
 {
     $bdd = new PDO('mysql:host=localhost;dbname=stockage;charset=utf8', 'root', '');
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch(Exception $e)
 {
-    die('Erreur : '.$e->getMessage());
+    die('La connexion à la base de donnée n\'as pas fonctionner, cela provient de l\'Erreur : '.$e->getMessage());
 }
 
 
 
+
+
+
+// UTILISATEUR
 function getAllUser()
 {
 	global $bdd;
@@ -26,15 +33,58 @@ function getUserById($id)
 
 
 
-function getAllCategory()
+
+
+
+// CATEGORIE ET SOUS-CATEGORIE
+function getRootCategory()
 {
 	global $bdd;
-	$req = $bdd->query('SELECT * FROM category');
+	$req = $bdd->query('SELECT * FROM category WHERE idParent IS NULL');
+	return $req;
+}
+
+function getAllSubCategoryById($idParent)
+{
+	global $bdd;
+	$req = $bdd->query('SELECT * FROM category WHERE idparent = '.$idParent);
+	return $req;
+}
+
+function categoryAsChild($idParent)
+{
+	global $bdd;
+	$req = $bdd->query('SELECT 1 FROM category WHERE idparent = '.$idParent.' LIMIT 1');
+	if ($req->fetch()) {
+		return true;
+	}
+	return false;
+}
+
+function getSubCategory(){
+	global $bdd;
+	$req = $bdd->query('SELECT * FROM category WHERE idParent IS NOT NULL');
+	return $req;
+}
+
+function setSubCategory($nom, $idParent){
+	global $bdd;
+	$req = $bdd->query("INSERT INTO category (nom, idparent) VALUES ('$nom',$idParent)");
+}
+
+function getSubCategoryWParent(){
+	global $bdd;
+	$req = $bdd->query('SELECT cc.id id, cc.nom nom, cp.nom nomParent FROM category cc JOIN category cp on cc.idparent = cp.id WHERE cc.idParent IS NOT NULL');
 	return $req;
 }
 
 
 
+
+
+
+
+// OBJET
 function getObjectByCategory($category)
 {
 	global $bdd;
@@ -42,3 +92,61 @@ function getObjectByCategory($category)
 	return $req;
 }
 
+function getAllObject()
+{
+	global $bdd;
+	$req = $bdd->query('SELECT * FROM object ');
+	return $req;
+}
+
+function setObject($nom, $parent, $marque, $model, $nombre, $cout){
+	global $bdd;
+	$requette ="INSERT INTO `object`( `idcategory`, `nom`, `marque`, `model`, `cout`, `nombre`) VALUES ($parent,'$nom','$marque','$model',$cout,$nombre)";
+	//echo $requette;
+	$req = $bdd->query($requette);
+}
+
+
+
+// FLUX
+function newFlux($idPersonne, $panier){
+	//INSERT INTO table (nom_colonne_1, nom_colonne_2, ...
+	//VALUES ('valeur 1', 'valeur 2', ...)
+	global $bdd;
+	$panier = json_decode($panier,true);
+	if ($_GET['mode'] == 'Dépôt') {
+		$mode = 'D';//dépot
+		$simbole = '+';
+	}else{
+		$mode = 'R';//retrait
+		$simbole = '-';
+	}
+
+	foreach ($panier as $objet) {
+		$req = $bdd->query("INSERT INTO flux VALUES (NULL,'$mode',".$objet['id'].",$idPersonne,".$objet['nbselect'].",DATE(NOW()))");
+
+		$req2 = $bdd->query("SELECT nombre FROM object WHERE id = ".$objet['id']);
+
+		if ($objet2 = $req2->fetch()) {
+			
+			
+			$res = $bdd->query("UPDATE object SET nombre = ".$objet2['nombre'].$simbole.$objet['nbselect']." WHERE id = ".$objet['id'] );
+
+		}else{
+			die("une erreur est survenue lors de la mise a jour du nombre. Code erreur: #02#");
+		}
+		
+	}	
+}
+
+
+function getFlux(){//recuperation des log de flux.
+	global $bdd;
+
+	$req = $bdd->query("SELECT f.id, f.date, f.mode, u.nom, o.nom 'nomObjet', o.marque, o.model, o.cout, f.nombre FROM `flux` f JOIN user u ON u.id = f.idpers JOIN object o ON o.id = f.idobject ORDER BY f.id DESC");
+	$liste=[];
+	while($data = $req->fetch()){
+		$liste[] = $data;
+	}
+	return $liste;
+}
