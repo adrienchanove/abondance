@@ -19,6 +19,44 @@ img
 	-webkit-filter: drop-shadow(0px 0px 25px rgba(0,255,41, 0.6));
 }
 
+.buttonSubmit
+{
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+
+	width: 630px;
+	height: 50px;
+
+	
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	border: solid 2px #00FF29;
+	
+	background: rgba(0,90,31,0.8);
+	
+	text-shadow: 0 0 20px rgba(0,255,41,1);
+	color: #00FF29;
+	font-family: 'roboto mono';
+}
+
+.buttonSubmit:hover
+{
+	background: rgba(0,190,41,0.8);
+}
+
+.buttonSubmit:active
+{
+	background: rgba(0,90,31,0.8);
+}
+
+input
+{
+	margin-top: 8px;
+
+	width: 260px;
+	height: 25px;
+}
+
 /*=========================================== MESSAGE*/
 
 #message
@@ -35,8 +73,129 @@ img
 {
 	text-shadow: 0 0 20px rgba(0,255,41,1);
 	color: #00FF29;
-	
 	font-family: 'roboto mono';
 	
 	margin-top: 30px;
+}
+
+/*=========================================== NEW CATEGORY*/
+#form-category
+{
+	position: absolute;
+
+	width: 666px;
+	height: 300px;
+	
+	top: 95px;
+
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	border: solid 2px #00FF29;
+	
+	text-shadow: 0 0 20px rgba(0,255,41,1);
+	color: #00FF29;
+	font-family: 'roboto mono';
+	
+	text-align: left;
+}
+
+/*=========================================== NEW ITEM*/
+#form-objet
+{
+	position: absolute;
+	left: 685px;
+	top: 95px;
+
+	width: 669px;
+	height: 300px;
+
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	border: solid 2px #00FF29;
+	
+	text-shadow: 0 0 20px rgba(0,255,41,1);
+	color: #00FF29;
+	font-family: 'roboto mono';
+	
+	text-align: left;
+}
+
+/*=========================================== LOG*/
+
+#tableFrame
+{
+	position: absolute;
+	
+	top: 405px;
+	
+
+	width: 1345px;
+	height: 260px;
+
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	border: solid 2px #00FF29;
+	
+	text-shadow: 0 0 20px rgba(0,255,41,1);
+	color: #00FF29;
+	font-family: 'roboto mono';
+	
+	overflow-y: scroll;
+}
+
+table
+{
+	margin-top: 5px;
+	width: 1300px;
+	border: solid 2px #00FF29;
+}
+
+#PDFButton
+{
+	position: absolute;
+	top: 675px;
+	
+	width: 300px;
+	height: 70px;
+	
+	text-align: center;
+
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	border: solid 2px #00FF29;
+	
+	
+}
+
+#PDFButtonText, a
+{
+	margin-top: 20px;
+
+	text-shadow: 0 0 20px rgba(0,255,41,1);
+	font-size: 25px; 
+	color: #00FF29;
+	font-family: 'roboto mono';
+}
+
+/*=========================================== SCROLLBAR*/
+
+::-webkit-scrollbar
+{
+	width: 35px;
+	border: solid 1px #00FF29;
+	box-shadow: 0 0 25px rgba(0,190,41,0.8);
+}
+
+::-webkit-scrollbar-track 
+{
+	border: solid 2px #00FF29;
+	box-shadow: 0 0 15px rgba(0,190,41,0.8), inset 0 0 25px rgba(0,190,41,0.8);
+}
+ 
+::-webkit-scrollbar-thumb 
+{
+	background: #00FF29;
+	box-shadow: 0 0 15px rgba(0,255,41,0.8), inset 0 0 25px rgba(0,190,41,0.8);
+}
+
+::-webkit-scrollbar-thumb:hover 
+{
+	background: rgba(0,255,41,0.7);
+	box-shadow: 0 0 15px rgba(0,255,41,0.8), inset 0 0 25px rgba(0,190,41,0.8);
 }
