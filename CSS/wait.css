@@ -1,0 +1,35 @@
+/*=========================================== GENERAL*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+html
+{
+	width: 100%;
+	height: 100%;
+	box-shadow: inset 0 0 200px rgba(0,0,0,1);
+}
+
+body
+{
+	background: repeating-linear-gradient(#002C07, #002C07 5px, #00530D 5px, #00530D 10px);
+	
+}
+
+/*=========================================== TEXT*/
+
+#text
+{
+	text-shadow: 0 0 20px rgba(0,255,41,1);
+	color: #00FF29;
+	font-family: 'roboto mono';
+	
+	text-align: center;
+}
+
+#logo
+{
+	margin-top: 250px;
+
+	text-shadow: 0 0 20px rgba(0,255,41,1);
+	font-size: 150px;
+	text-align: center;
+}
