@@ -91,7 +91,7 @@ function writing(){
 function finishBoot(){
 	awakening.style.display = "none";
 	user.style.display = "block";
-	//awakening.innerHTML = '<img src="Images/ico_booting.png" id="bootingIco">';
+	awakening.innerHTML = '<img src="Images/ico_booting.png" id="bootingIco">';
 	resetTimeOut();
 	document.addEventListener("click", resetTimeOut);
 }
