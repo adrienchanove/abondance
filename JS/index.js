@@ -19,6 +19,11 @@ let boitePrix      = document.querySelector("#buyListTotal");
 let boiteValidation= document.querySelector("#buyButton");
 let boiteNom       = document.querySelector("#userInfoText");
 
+let boiteRecherche = document.querySelector("#boiteRecherche");
+let inputText      = document.querySelector("#search");
+let filtre         = document.querySelector("#filtreRecherche");
+let rechercheTable = document.querySelector("#rechercheTable");
+
 let catId = null;
 let subCatId = null;
 let choix = null;
@@ -292,4 +297,38 @@ function majBoitePanier(){
 
 
 
+
+function showSearch(){
+	if (boiteRecherche.style.display == "none") {
+		boiteRecherche.style.display = "";
+	}else{
+		boiteRecherche.style.display = "none";
+	}
+}
+
+// parentCat| |category| |nom| |marque| |model
+
+function recherche(){
+	
+	var value = inputText.value;//recuperation value text
+	var fil = filtre.value;//recuperation value filtre
+	var bool = false;
+	var parentCatName, categoryName;
+
+	rechercheTable.innerHTML = '<tr> <th>parentCat</th><th>category</th><th>nom</th><th>marque</th><th>model</th></tr>';
+
+	for (var i = data.length - 1; i >= 0; i--) {
+		parentCatName = data[i]['nom'].toLowerCase();
+		for (var o = data[i]['child'].length - 1; o >= 0; o--) {
+			categoryName = data[i]['child'][o]['nom'].toLowerCase();
+			for (var p = data[i]['child'][o]['objet'].length - 1; p >= 0; p--) {
+				var e = data[i]['child'][o]['objet'][p][fil].match(value.toLowerCase());
+				if (e) {
+					rechercheTable.innerHTML += "<tr><td>"+parentCatName+"</td><th>"+categoryName+"</td><th>"+data[i]['child'][o]['objet'][p]['nom']+"</td><td>"+data[i]['child'][o]['objet'][p]['marque']+"</td><td>"+data[i]['child'][o]['objet'][p]['model']+"</td></tr>";
+				}
+
+			}
+		}
+	}
+}
 

@@ -419,6 +419,35 @@ img
 	text-shadow: 0 0 20px rgba(0,255,40,1);
 }
 
+/*=========================================== SEARCH*/
+
+#boiteRecherche{
+	position: absolute;
+	top: 25%;
+	left: 25%;
+
+	width: 50%;
+	height: 50%;
+
+	border: solid black 5px;
+
+}
+
+#headRecherche{
+	height: 10%;
+	width: 100%;
+	background-color: green;
+}
+
+#bodyRecherche{
+	background-color: blue;
+	height: 90%;
+	width: 100%;
+	overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
 /*=========================================== SCROLLBAR*/
 
 ::-webkit-scrollbar

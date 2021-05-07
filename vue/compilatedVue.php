@@ -26,10 +26,10 @@
         <button id="buttonExit" onclick="window.location.href = '.'">
             <img id="buttonExitIco" src="images/ico_exit.png">
         </button>
-		<button id="buttonAdd">
+		<button id="buttonAdd" onclick="window.location.href = '.?p=admin'">
 			<img id="buttonAddIco" src="images/ico_add.png">
 		</button>
-		<button id="buttonSearch">
+		<button id="buttonSearch" onclick="showSearch()">
 			<img id="buttonSearchIco" src="images/ico_search.png">
 		</button>
         <div id="actionSelectButtonFrame">
@@ -45,6 +45,30 @@
             
             
         </div>
+
+        <div id="boiteRecherche">
+            <div id="headRecherche">
+                <input type="text" name="search" id="search" onkeyup="recherche()">
+                <select name="filtre" id="filtreRecherche">
+                    <option value="nom">Nom</option>
+                    <option value="marque">Marque</option>
+                    <option value="model">Model</option>
+                </select>
+                <button onclick="showSearch()">X</button>
+            </div>
+            <div id="bodyRecherche">
+                <table id="rechercheTable" border=3 style="width:100%">
+                     <tr>
+                        <th>parentCat</th>
+                        <th>category</th>
+                        <th>nom</th>
+                        <th>marque</th>
+                        <th>model</th>
+                      </tr>
+                </table>
+            </div>
+        </div>
+
         <script type="text/javascript">
             let data=<?= json_encode($allData) ?>;
             let listeObjet=<?= json_encode($listeObjet)?>;
