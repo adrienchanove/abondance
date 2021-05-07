@@ -20,6 +20,19 @@ img
 	width: 600px;
 }
 
+/*=========================================== SLEEP ICO*/
+
+#sleep
+{
+	position: absolute;
+	
+	top: 50%;
+	left: 50%;
+	
+	margin-top: -200px;
+	margin-left: -200px;
+}
+
 /*=========================================== LOADING FRAME*/
 
 #loadingFrame, #sleep
