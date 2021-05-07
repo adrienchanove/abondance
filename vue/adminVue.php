@@ -86,6 +86,9 @@
 					<div id="PDFButtonText">
 						<a href=".?p=logpdf" target="_blank">Version PDF ici</a>
                 	</div>
+                    <div id="retour">
+                        <a href=".?p=compilated" >Retour</a>
+                    </div>
 				</div>
 				<div id="tableFrame"> 
 					<table border=1>

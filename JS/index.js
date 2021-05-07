@@ -40,7 +40,7 @@ function selectAction(cliquer){
 	subCatId = null;
 	
 	
-	if(cliquer.innerHTML !== 'Retour'){
+	if(cliquer.innerHTML !== 'Retour' && choix !== cliquer.innerHTML){
 		choix = cliquer.innerHTML;
 		listePanier = [];
 		boitePanier.innerHTML="";
@@ -61,7 +61,7 @@ function majCategory (raison){
 		for (var i = data.length - 1; i >= 0; i--) {
 			data[i]
 
-			let category = document.createElement("button");
+			var category = document.createElement("button");
 			category.classList.add("categoryButton");
 			category.setAttribute('idcat',data[i]['id']);
 			category.innerHTML = data[i]['nom'];
@@ -72,17 +72,18 @@ function majCategory (raison){
 		
 	}
 	if (raison == 'subCat') {
+		console.log("")
 		for (var i = data.length - 1; i >= 0; i--) {
 			if (data[i]['id'] == catId) {
 				
 				for (var z = data[i]['child'].length - 1; z >= 0; z--) {
 					
-					let category = document.createElement("button");
-					category.classList.add("categoryButton");
-					category.setAttribute('idcat',data[i]['child'][z]['id']);
-					category.innerHTML = data[i]['child'][z]['nom'];
-					boiteCategorie.appendChild(category);
-					category.onclick = function(){selectSubCat(this);};
+					var categoryy = document.createElement("button");
+					categoryy.classList.add("categoryButton");
+					categoryy.setAttribute('idcat',data[i]['child'][z]['id']);
+					categoryy.innerHTML = data[i]['child'][z]['nom'];
+					boiteCategorie.appendChild(categoryy);
+					categoryy.onclick = function(){selectSubCat(this);};
 
 				}
 				let category = document.createElement("button");
@@ -212,9 +213,6 @@ function selectChangeNbObjet(cliquer,operande){
 										nouveauTot = ancienTot+1;
 									}
 
-									
-									
-									
 									break;
 
 								case '-':
@@ -256,13 +254,8 @@ function selectChangeNbObjet(cliquer,operande){
 		}
 
 	}
-	
-	
-	
-	
 
 
-	
 
 }
 
@@ -306,7 +299,7 @@ function showSearch(){
 	}
 }
 
-// parentCat| |category| |nom| |marque| |model
+
 
 function recherche(){
 	
@@ -323,15 +316,21 @@ function recherche(){
 			categoryName = data[i]['child'][o]['nom'].toLowerCase();
 			for (var p = data[i]['child'][o]['objet'].length - 1; p >= 0; p--) {
 				var e = data[i]['child'][o]['objet'][p][fil].toLowerCase().match(value.toLowerCase());
-				
-				if (e) {
-					rechercheTable.innerHTML += "<tr><td>"+parentCatName+"</td><th>"+categoryName+"</td><th>"+data[i]['child'][o]['objet'][p]['nom']+"</td><td>"+data[i]['child'][o]['objet'][p]['marque']+"</td><td>"+data[i]['child'][o]['objet'][p]['model']+"</td></tr>";
-				}
 
+				if (e) {
+					rechercheTable.innerHTML += "<tr><td>"+parentCatName+"</td><th>"+categoryName+"</td><th><button onclick=\"selectObjViaRech("+data[i]['id']+","+data[i]['child'][o]['id']+")\">"+data[i]['child'][o]['objet'][p]['nom']+"</button></td><td>"+data[i]['child'][o]['objet'][p]['marque']+"</td><td>"+data[i]['child'][o]['objet'][p]['model']+"</td></tr>";
+				}
 			}
 		}
 	}
 }
+function selectObjViaRech(cat, subcat){
+	console.log("cat:"+cat+"  subcat:"+subcat);
+	catId = cat;
+	subCatId = subcat;
+	majCategory('subCat');
+	majObject();
+}
 
-showSearch();
+setTimeout(showSearch,0);
 
