@@ -32,11 +32,27 @@
         
         <div id="booting">
             <div id="sleep">
-                <img src="Images/ico_turnOn.png">
+                
             </div>
             <div id="loadingFrame">
-                <img src="Images/ico_booting.png" id="bootingIco"> 
-                
+                <img src="Images/ico_booting.png" id="bootingIco">
+                Loading  Abondance OS V 1.0.2<br />
+                Initializing CPU #0<br />
+                Detected 128MHz processor<br />
+                CPU .......................... OK<br />
+                Memory 4096Ko/4096Ko available<br />
+                kern.sts.abcizd .............. OK<br />
+                Checking disk<br />
+                Disk ......................... OK<br />
+                Mounting local filesystems<br />
+                kern.sts.shnmza .............. OK<br />
+                kern.sts.nach.syn ............ OK<br />
+                kern.sts.shnni ............... OK<br />
+                kern.sts.skmzoc .............. OK<br />
+                kern.sts.abcizd .............. OK<br />
+                Deamon loaded<br />
+                All system loaded ............ OK<br />
+                Loading login menu ...
             </div>
         </div>
         
