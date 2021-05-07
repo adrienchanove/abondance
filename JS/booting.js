@@ -3,10 +3,9 @@ let sleep = document.querySelector("#sleep");
 let awakening = document.querySelector("#loadingFrame");
 
 let idTimeOut = null;
-let timer = 5000  // temp avant mise en veille
+let timer = 7000  // temp avant mise en veille
 
 
-console.log(user.style.display);
 
 function miseEnVeille(){
 	console.log("mise en veille");
@@ -28,22 +27,92 @@ function reveille(){
 	sleep.removeEventListener("click", reveille);
 	awakening.style.display = "block";
 
+	console.log('here we go again');
+	setTimeout(writing,1000);
+
+}
 
 
+function writing(){
+	var i = 0;
+	var waiting = 40;
+	setTimeout(function(){ajoutCaractere('Loading  Abondance OS V 1.0.2<br />')},i);
+	i+=100;
+	setTimeout(function(){ajoutCaractere('Initializing CPU #0<br />')},i);
+	i+=waiting;
+	setTimeout(function(){ajoutCaractere('Detected 128MHz processor<br />')},i);
+	i+=100;
+	setTimeout(function(){ajoutCaractere('CPU ')},i);
+ 	i+=waiting;
+	setTimeout(function(){point(26)},i);
+	i+=((26*waiting)+100);
+	setTimeout(function(){ajoutCaractere('Checking disk<br />')},i);
+	i+=100;
+	setTimeout(function(){ajoutCaractere('Disk ')},i);
+	i+=100;
+	setTimeout(function(){point(25)},i);
+	i+=(25*waiting)+100;
+	setTimeout(function(){ajoutCaractere('Mounting local filesystems<br />')},i);
+	i+=100;
+	setTimeout(function(){ajoutCaractere('kern.sts.shnmza ')},i);
+	i+=100;
+	setTimeout(function(){point(14)},i);
+	i+=(14*waiting)+100;
+	setTimeout(function(){ajoutCaractere('kern.sts.nach.syn ')},i);
+	i+=100;
+	setTimeout(function(){point(12)},i);
+	i+=(12*waiting)+100;
+	setTimeout(function(){ajoutCaractere('kern.sts.shnni ')},i);
+	i+=100;
+	setTimeout(function(){point(15)},i);
+	i+=(15*waiting)+100;
+	setTimeout(function(){ajoutCaractere('kern.sts.skmzoc ')},i);
+	i+=100;
+	setTimeout(function(){point(14)},i);
+	i+=(14*waiting)+100;
+	setTimeout(function(){ajoutCaractere('kern.sts.abcizd ')},i);
+	i+=100;
+	setTimeout(function(){point(14)},i);
+	i+=(14*waiting)+100;
+	setTimeout(function(){ajoutCaractere('Deamon loaded<br /> ')},i);
+	i+=100;
+	setTimeout(function(){ajoutCaractere('All system loaded ')},i);
+	i+=100;
+	setTimeout(function(){point(12)},i);
+	i+=(12*waiting)+100;
+	setTimeout(function(){ajoutCaractere('Loading login menu ... ')},i);
+
+	i+=200;
+	setTimeout(function(){finishBoot();},i);
+	console.log(i);
+
+}
+
+function finishBoot(){
+	awakening.style.display = "none";
+	user.style.display = "block";
+	awakening.innerHTML = '<img src="Images/ico_booting.png" id="bootingIco">';
+	resetTimeOut();
+	document.addEventListener("click", resetTimeOut);
 }
 
 function ajoutCaractere(data){
 	awakening.innerHTML += data;
+	console.log(data);
 }
 
 
 function point( nbPoint){
-	var time = 500;
+	
+	var time = 0;
+	if (nbPoint == 0)
+	 return;
 	while(nbPoint > 0){
-		setTimeout(ajoutCaractere('.'),time);
-		time += 500;
+		setTimeout(function(){ajoutCaractere('.')},time);
+		time += 35;
+		nbPoint -= 1 ;
 	}
-	setTimeout(ajoutCaractere(' OK<br>'),time);
+	setTimeout(function(){ajoutCaractere(' OK<br>')},time);
 }
 
 
