@@ -332,3 +332,5 @@ function recherche(){
 	}
 }
 
+showSearch();
+
