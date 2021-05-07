@@ -322,7 +322,8 @@ function recherche(){
 		for (var o = data[i]['child'].length - 1; o >= 0; o--) {
 			categoryName = data[i]['child'][o]['nom'].toLowerCase();
 			for (var p = data[i]['child'][o]['objet'].length - 1; p >= 0; p--) {
-				var e = data[i]['child'][o]['objet'][p][fil].match(value.toLowerCase());
+				var e = data[i]['child'][o]['objet'][p][fil].toLowerCase().match(value.toLowerCase());
+				
 				if (e) {
 					rechercheTable.innerHTML += "<tr><td>"+parentCatName+"</td><th>"+categoryName+"</td><th>"+data[i]['child'][o]['objet'][p]['nom']+"</td><td>"+data[i]['child'][o]['objet'][p]['marque']+"</td><td>"+data[i]['child'][o]['objet'][p]['model']+"</td></tr>";
 				}
