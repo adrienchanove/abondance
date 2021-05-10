@@ -4,8 +4,8 @@
         <link rel="stylesheet" type="text/css" href="CSS/main.css">
     </head>
     <body>
-        <audio id="audioBoot">
-            <source src="Audio/snd_booting.mp3" type="audio/mpeg">
+        <audio id="audioType">
+            <source src="Audio/snd_type.mp3" type="audio/mpeg">
         </audio>
         <div id="buyListFrame">
             <div id="buyListTotal">
@@ -80,3 +80,4 @@
         <script src="JS/index.js"></script>
     </body>
 </html>
+

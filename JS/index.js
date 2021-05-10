@@ -24,7 +24,7 @@ let inputText      = document.querySelector("#search");
 let filtre         = document.querySelector("#filtreRecherche");
 let rechercheTable = document.querySelector("#rechercheTable");
 
-//let audio          = document.querySelector("#audioBoot");
+let audio          = document.querySelector("#audioType");
 
 let catId = null;
 let subCatId = null;
@@ -55,6 +55,7 @@ function selectAction(cliquer){
 }
 
 function majCategory (raison){
+	audio.play();
 	console.log('mise à jour categorie :' +raison);
 
 	boiteCategorie.innerHTML = "";
@@ -102,6 +103,7 @@ function majCategory (raison){
 }
 
 function majObject(){
+	audio.play();
 	console.log('mise à jour objet, categorie n°' +subCatId);
 	boitObjet.innerHTML = "";
 	for (var i = data.length - 1; i >= 0; i--) {
@@ -185,6 +187,7 @@ function selectSubCat(cliquer){
 }
 
 function selectChangeNbObjet(cliquer,operande){
+	audio.play();
 
 	console.log("select '"+operande+"' for object n°"+cliquer.getAttribute('idobj'));
 

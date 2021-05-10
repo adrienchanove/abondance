@@ -9,7 +9,9 @@
     </head>
         
     <body>
-        <audio id="audioBoot" src="Audio/snd_booting.mp3">sdfdgkhqsjhfgb</audio>
+        <audio id="audioBoot">
+            <source src="Audio/snd_booting.mp3" type="audio/mpeg">
+        </audio>
         
         <div id="userListFrame">
             <div id="userList">
