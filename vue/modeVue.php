@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Expires" content="-1">
         <meta charset="utf-8" />
         <title>mode</title>
         <link href="style.css" rel="stylesheet" /> 

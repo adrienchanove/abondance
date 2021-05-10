@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Expires" content="-1">
         <meta charset="utf-8" />
         <title>Mon blog</title>
         <link href="style.css" rel="stylesheet" /> 

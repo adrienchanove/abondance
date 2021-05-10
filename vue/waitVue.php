@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Expires" content="-1">
 	<title></title>
 	<link href="CSS/wait.css" rel="stylesheet" />
 </head>

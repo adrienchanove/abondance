@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Expires" content="-1">
         <link rel="stylesheet" type="text/css" href="CSS/main.css">
+        <meta charset="utf-8">
     </head>
     <body>
         <audio id="audioType">

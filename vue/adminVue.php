@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
+        <meta http-equiv="Expires" content="-1">
         <meta charset="utf-8" />
         <title>Administration</title>
         <link href="CSS/admin.css" rel="stylesheet" /> 
