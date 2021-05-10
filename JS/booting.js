@@ -3,7 +3,7 @@ let sleep = document.querySelector("#sleep");
 let awakening = document.querySelector("#loadingFrame");
 
 let idTimeOut = null;
-let timer = 7000  // temp avant mise en veille
+let timer = 15000  // temps avant mise en veille
 
 
 
@@ -35,7 +35,7 @@ function reveille(){
 
 function writing(){
 	var i = 0;
-	var waiting = 40;
+	var waiting = 20;
 	setTimeout(function(){ajoutCaractere('Loading  Abondance OS V 1.0.2<br />')},i);
 	i+=100;
 	setTimeout(function(){ajoutCaractere('Initializing CPU #0<br />')},i);
@@ -109,7 +109,7 @@ function point( nbPoint){
 	 return;
 	while(nbPoint > 0){
 		setTimeout(function(){ajoutCaractere('.')},time);
-		time += 35;
+		time += 10;
 		nbPoint -= 1 ;
 	}
 	setTimeout(function(){ajoutCaractere(' OK<br>')},time);

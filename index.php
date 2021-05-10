@@ -49,6 +49,11 @@ if(isset($_GET) && isset($_GET['p'])){
 
 		$nomPersonne=null;
 		$rqte = getAllUser();
+
+		if(!isset($_SESSION['user_id'])){// verification que le nom a bien etait rentré
+			header('Location: .');
+			die();
+		}
 		 while ($data = $rqte->fetch()){
 		 	if ($data['id'] == $_SESSION['user_id']) {
 		 		$nomPersonne = $data['nom'];
