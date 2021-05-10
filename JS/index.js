@@ -24,6 +24,8 @@ let inputText      = document.querySelector("#search");
 let filtre         = document.querySelector("#filtreRecherche");
 let rechercheTable = document.querySelector("#rechercheTable");
 
+//let audio          = document.querySelector("#audioBoot");
+
 let catId = null;
 let subCatId = null;
 let choix = null;

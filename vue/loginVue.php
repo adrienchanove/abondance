@@ -9,6 +9,7 @@
     </head>
         
     <body>
+        <audio id="audioBoot" src="Audio/snd_booting.mp3">sdfdgkhqsjhfgb</audio>
         
         <div id="userListFrame">
             <div id="userList">

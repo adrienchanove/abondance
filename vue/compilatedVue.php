@@ -4,6 +4,9 @@
         <link rel="stylesheet" type="text/css" href="CSS/main.css">
     </head>
     <body>
+        <audio id="audioBoot">
+            <source src="Audio/snd_booting.mp3" type="audio/mpeg">
+        </audio>
         <div id="buyListFrame">
             <div id="buyListTotal">
                 TOTAL : 0€

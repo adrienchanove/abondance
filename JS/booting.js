@@ -1,9 +1,13 @@
-let user = document.querySelector("#userListFrame");
-let sleep = document.querySelector("#sleep");
+
+
+
+let user      = document.querySelector("#userListFrame");
+let sleep     = document.querySelector("#sleep");
 let awakening = document.querySelector("#loadingFrame");
+let audio     = document.querySelector("#audioBoot");
 
 let idTimeOut = null;
-let timer = 15000  // temps avant mise en veille
+let timer = 60000  // temps avant mise en veille
 
 
 
@@ -13,6 +17,9 @@ function miseEnVeille(){
 	user.style.display = "none";
 	sleep.style.display = "block";
 	sleep.addEventListener("click", reveille);
+	
+	audio.pause()
+	audio.currentTime = 0;
 }
 
 function resetTimeOut(){
@@ -28,6 +35,7 @@ function reveille(){
 	awakening.style.display = "block";
 
 	console.log('here we go again');
+	audio.play();
 	setTimeout(writing,1000);
 
 }

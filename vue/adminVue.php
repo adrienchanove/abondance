@@ -86,10 +86,12 @@
 					<div id="PDFButtonText">
 						<a href=".?p=logpdf" target="_blank">Version PDF ici</a>
                 	</div>
-                    <div id="retour">
+				</div>
+                <div id="retour">
+                    <div id="retourText">
                         <a href=".?p=compilated" >Retour</a>
                     </div>
-				</div>
+                </div>
 				<div id="tableFrame"> 
 					<table border=1>
 						<tr>

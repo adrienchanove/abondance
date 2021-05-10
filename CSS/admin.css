@@ -176,7 +176,7 @@ table
 	border: solid 2px #00FF29;
 }
 
-#PDFButton
+#PDFButton, #retour
 {
 	position: absolute;
 	top: 675px;
@@ -187,12 +187,15 @@ table
 	text-align: center;
 
 	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
-	border: solid 2px #00FF29;
-	
-	
+	border: solid 2px #00FF29;	
 }
 
-#PDFButtonText, a
+#PDFButton
+{
+	left: 325px;
+}
+
+#PDFButtonText, a, #retourText
 {
 	margin-top: 20px;
 
