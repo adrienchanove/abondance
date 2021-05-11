@@ -273,8 +273,12 @@ img
 	
 	text-align: center;
 	
-	overflow-x: none;
+	overflow-x: unset;
 	overflow-y: scroll;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .categoryButton
