@@ -67,7 +67,13 @@ function majCategory (raison){
 			var category = document.createElement("button");
 			category.classList.add("categoryButton");
 			category.setAttribute('idcat',data[i]['id']);
-			category.innerHTML = data[i]['nom'];
+			category.innerHTML = data[i]['nom']+"<br>";
+
+			img = document.createElement("img");
+			img.classList.add("imageCat");
+			img.src = "Images/img_cat/"+data[i]['id']+".png";
+			category.appendChild(img);
+
 			boiteCategorie.appendChild(category);
 			category.onclick = function(){selectCat(this);};
 
@@ -84,7 +90,13 @@ function majCategory (raison){
 					var categoryy = document.createElement("button");
 					categoryy.classList.add("categoryButton");
 					categoryy.setAttribute('idcat',data[i]['child'][z]['id']);
-					categoryy.innerHTML = data[i]['child'][z]['nom'];
+					categoryy.innerHTML = data[i]['child'][z]['nom']+"<br>";
+					
+					img = document.createElement("img");
+					img.classList.add("imageCat");
+					img.src = "Images/img_cat/"+data[i]['child'][z]['id']+".png";
+					categoryy.appendChild(img);
+
 					boiteCategorie.appendChild(categoryy);
 					categoryy.onclick = function(){selectSubCat(this);};
 
