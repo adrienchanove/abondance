@@ -536,6 +536,9 @@ img
 
 .butCategory
 {	
+	width: 100%;
+	height: 100%;
+
 	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
 	border: solid 1px #00FF29;
 	background: rgba(0,90,31,0.8);
