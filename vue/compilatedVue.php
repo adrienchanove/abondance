@@ -62,13 +62,13 @@
                 <button onclick="showSearch()">X</button>
             </div>
             <div id="bodyRecherche">
-                <table id="rechercheTable" border=3 style="width:100%">
+                <table id="rechercheTable" border=2 style="width:100%">
                      <tr>
-                        <th>parentCat</th>
-                        <th>category</th>
-                        <th>nom</th>
-                        <th>marque</th>
-                        <th>model</th>
+                        <th>Parent cat</th>
+                        <th>Catégorie</th>
+                        <th>Nom</th>
+                        <th>Marque</th>
+                        <th>Modèle</th>
                       </tr>
                 </table>
             </div>

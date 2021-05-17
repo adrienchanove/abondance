@@ -325,7 +325,7 @@ function recherche(){
 	var bool = false;
 	var parentCatName, categoryName;
 
-	rechercheTable.innerHTML = '<tr> <th>parentCat</th><th>category</th><th>nom</th><th>marque</th><th>model</th></tr>';
+	rechercheTable.innerHTML = '<tr> <th>Parent cat</th><th>Catégorie</th><th>Nom</th><th>Marque</th><th>Modèle</th></tr>';
 
 	for (var i = data.length - 1; i >= 0; i--) {
 		parentCatName = data[i]['nom'].toLowerCase();
@@ -335,7 +335,7 @@ function recherche(){
 				var e = data[i]['child'][o]['objet'][p][fil].toLowerCase().match(value.toLowerCase());
 
 				if (e) {
-					rechercheTable.innerHTML += "<tr><td>"+parentCatName+"</td><th>"+categoryName+"</td><th><button onclick=\"selectObjViaRech("+data[i]['id']+","+data[i]['child'][o]['id']+")\">"+data[i]['child'][o]['objet'][p]['nom']+"</button></td><td>"+data[i]['child'][o]['objet'][p]['marque']+"</td><td>"+data[i]['child'][o]['objet'][p]['model']+"</td></tr>";
+					rechercheTable.innerHTML += "<tr><td>"+parentCatName+"</td><td>"+categoryName+"</td><td><button onclick=\"selectObjViaRech("+data[i]['id']+","+data[i]['child'][o]['id']+")\">"+data[i]['child'][o]['objet'][p]['nom']+"</button></td><td>"+data[i]['child'][o]['objet'][p]['marque']+"</td><td>"+data[i]['child'][o]['objet'][p]['model']+"</td></tr>";
 				}
 			}
 		}
