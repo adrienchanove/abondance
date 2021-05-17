@@ -441,9 +441,8 @@ img
 	width: 50%;
 	height: 50%;
 
-	border: solid black 5px;
-
-
+	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
+	border: solid 1px #00FF29;
 }
 
 #headRecherche{
@@ -453,7 +452,7 @@ img
 }
 
 #bodyRecherche{
-	background-color: blue;
+	background-color: #00530D;
 	height: 90%;
 	width: 100%;
 	overflow-y: scroll;
