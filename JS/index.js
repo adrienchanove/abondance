@@ -335,7 +335,7 @@ function recherche(){
 				var e = data[i]['child'][o]['objet'][p][fil].toLowerCase().match(value.toLowerCase());
 
 				if (e) {
-					rechercheTable.innerHTML += "<tr><td>"+parentCatName+"</td><td>"+categoryName+"</td><td><button onclick=\"selectObjViaRech("+data[i]['id']+","+data[i]['child'][o]['id']+")\">"+data[i]['child'][o]['objet'][p]['nom']+"</button></td><td>"+data[i]['child'][o]['objet'][p]['marque']+"</td><td>"+data[i]['child'][o]['objet'][p]['model']+"</td></tr>";
+					rechercheTable.innerHTML += "<tr><td>"+parentCatName+"</td><td>"+categoryName+"</td><td><button class=\"butCategory\" onclick=\"selectObjViaRech("+data[i]['id']+","+data[i]['child'][o]['id']+")\">"+data[i]['child'][o]['objet'][p]['nom']+"</button></td><td>"+data[i]['child'][o]['objet'][p]['marque']+"</td><td>"+data[i]['child'][o]['objet'][p]['model']+"</td></tr>";
 				}
 			}
 		}
