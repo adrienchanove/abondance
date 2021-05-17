@@ -476,6 +476,8 @@ img
 
 #butResetRecherche
 {
+	width: 10%;
+	
 	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
 	border: solid 1px #00FF29;
 	background: rgba(0,90,31,0.8);
@@ -496,6 +498,34 @@ img
 #butResetRecherche:active
 {
 	background: rgba(0,90,31,0.8);
+}
+
+#search
+{
+	width: 20%;
+	
+	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
+	border: solid 1px #00FF29;
+	background: rgba(0,90,31,0.8);
+	
+	color: #00FF29;
+	font-family: 'roboto mono';
+	font-size: 15px;
+	text-shadow: 0 0 20px rgba(0,255,40,1);
+}
+
+#filtreRecherche
+{
+	width: 60%;
+	
+	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
+	border: solid 1px #00FF29;
+	background: rgba(0,90,31,0.8);
+	
+	color: #00FF29;
+	font-family: 'roboto mono';
+	font-size: 15px;
+	text-shadow: 0 0 20px rgba(0,255,40,1);
 }
 
 /*=========================================== SCROLLBAR*/
