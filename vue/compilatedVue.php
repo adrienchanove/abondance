@@ -59,7 +59,7 @@
                     <option value="marque">Marque</option>
                     <option value="model">Model</option>
                 </select>
-                <button onclick="showSearch()">X</button>
+                <button id="butResetRecherche" onclick="showSearch()">X</button>
             </div>
             <div id="bodyRecherche">
                 <table id="rechercheTable" border=2 style="width:100%">

@@ -451,6 +451,8 @@ img
 	height: 10%;
 	width: 100%;
 	background-color: green;
+	
+	text-align: center;
 }
 
 #bodyRecherche
@@ -472,6 +474,29 @@ img
 	border: solid 1px #00FF29;
 }
 
+#butResetRecherche
+{
+	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
+	border: solid 1px #00FF29;
+	background: rgba(0,90,31,0.8);
+	
+	color: #00FF29;
+	font-family: 'roboto mono';
+	font-size: 15px;
+	text-shadow: 0 0 20px rgba(0,255,40,1);
+	
+	transition-duration: 0.4s;
+}
+
+#butResetRecherche:hover
+{
+	background: rgba(0,190,41,0.8);
+}
+
+#butResetRecherche:active
+{
+	background: rgba(0,90,31,0.8);
+}
 
 /*=========================================== SCROLLBAR*/
 
