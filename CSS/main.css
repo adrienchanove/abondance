@@ -433,7 +433,8 @@ img
 
 /*=========================================== SEARCH*/
 
-#boiteRecherche{
+#boiteRecherche
+{
 	position: absolute;
 	top: 25%;
 	left: 25%;
@@ -445,13 +446,15 @@ img
 	border: solid 2px #00FF29;
 }
 
-#headRecherche{
+#headRecherche
+{
 	height: 10%;
 	width: 100%;
 	background-color: green;
 }
 
-#bodyRecherche{
+#bodyRecherche
+{
 	background-color: #00530D;
 	height: 90%;
 	width: 100%;
@@ -461,6 +464,12 @@ img
 	text-shadow: 0 0 20px rgba(0,255,41,1);
 	color: #00FF29;
 	font-family: 'roboto mono';
+}
+
+#rechercheTable
+{
+	box-shadow: 0 0 20px rgba(0,255,41,0.8), inset 0 0 20px rgba(0,255,41,0.8);
+	border: solid 2px #00FF29;
 }
 
 
