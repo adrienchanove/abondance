@@ -450,7 +450,7 @@ img
 {
 	height: 10%;
 	width: 100%;
-	background-color: green;
+	background-color: #00530D;
 	
 	text-align: center;
 }
@@ -476,6 +476,8 @@ img
 
 #butResetRecherche
 {
+	
+	margin-top: 5px;
 	width: 10%;
 	
 	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
@@ -502,7 +504,9 @@ img
 
 #search
 {
-	width: 20%;
+	margin-top: 5px;
+	
+	width: 60%;
 	
 	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
 	border: solid 1px #00FF29;
@@ -516,7 +520,9 @@ img
 
 #filtreRecherche
 {
-	width: 60%;
+	margin-top: 5px;
+	
+	width: 20%;
 	
 	box-shadow: 0 0 10px rgba(0,255,41,0.8), inset 0 0 10px rgba(0,255,41,0.8);
 	border: solid 1px #00FF29;
