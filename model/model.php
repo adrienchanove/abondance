@@ -135,7 +135,6 @@ function newFlux($idPersonne, $panier){
 		}else{
 			die("une erreur est survenue lors de la mise a jour du nombre. Code erreur: #02#");
 		}
-		
 	}	
 }
 
@@ -144,6 +143,32 @@ function getFlux(){//recuperation des log de flux.
 	global $bdd;
 
 	$req = $bdd->query("SELECT f.id, f.date, f.mode, u.nom, o.nom 'nomObjet', o.marque, o.model, o.cout, f.nombre FROM `flux` f JOIN user u ON u.id = f.idpers JOIN object o ON o.id = f.idobject ORDER BY f.id DESC");
+	$liste=[];
+	while($data = $req->fetch()){
+		$liste[] = $data;
+	}
+	return $liste;
+}
+
+function valueStock(){
+
+	global $bdd;
+
+	$req = $bdd->query("SELECT SUM(cout*nombre) AS total FROM object WHERE nombre != 0");
+	$value=0;
+	while($data = $req->fetch()){
+		$value += $data['total'];
+	}
+	return $value;
+}
+
+function fluxDiff($day){
+	if($day < 1){
+		return 0;
+	}
+	global $bdd;
+
+	$req = $bdd->query("SELECT * FROM `flux` WHERE DATEDIFF(DATE(NOW()), date) <= $day");
 	$liste=[];
 	while($data = $req->fetch()){
 		$liste[] = $data;

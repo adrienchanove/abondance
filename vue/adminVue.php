@@ -93,6 +93,11 @@
                         <a href=".?p=compilated" >Retour</a>
                     </div>
                 </div>
+                <div id="graph">
+                    <div id="graphText">
+                        <a href=".?p=graph" >Graph</a>
+                    </div>
+                </div>
 				<div id="tableFrame"> 
 					<table border=1>
 						<tr>

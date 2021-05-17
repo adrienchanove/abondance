@@ -176,7 +176,7 @@ table
 	border: solid 2px #00FF29;
 }
 
-#PDFButton, #retour
+#PDFButton, #retour, #graph
 {
 	position: absolute;
 	top: 675px;
@@ -195,7 +195,12 @@ table
 	left: 325px;
 }
 
-#PDFButtonText, a, #retourText
+#graph
+{
+	left: 650px;
+}
+
+#PDFButtonText, a, #retourText, #graphText
 {
 	margin-top: 20px;
 

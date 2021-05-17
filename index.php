@@ -136,7 +136,41 @@ if(isset($_GET) && isset($_GET['p'])){
 
 		break;
 
+	case 'graph':
 
+		$valueSt = valueStock();
+		$semain = fluxDiff(7);
+		$moi = fluxDiff(30);
+
+		$semaine=[];
+		foreach ($semain as $value) {
+			$temoin = false;
+			foreach ($semaine as $value2) {
+				if ($value['date'] == $value2['date']) {
+					$value2['nombre'] += 1;
+					$temoin = true;
+				}
+			}
+			if (!$temoin) {
+				$semaine[] = array('date' => $value['date'],'nombre' => 1 );
+			}
+		}
+
+		$mois=[];
+		foreach ($moi as $value) {
+			$temoin = false;
+			foreach ($mois as $key => $value2) {
+				if ($value['date'] == $value2['date']) {
+					$mois[$key]['nombre'] = $mois[$key]['nombre']+1;
+					$temoin = true;
+				}
+			}
+			if (!$temoin) {
+				$mois[] = array('date' => $value['date'],'nombre' => 1 );
+			}
+		}
+		require('vue/graph.Vue.php');
+		break;
 
 
 	case 'logpdf':
