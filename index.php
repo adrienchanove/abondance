@@ -145,9 +145,9 @@ if(isset($_GET) && isset($_GET['p'])){
 		$semaine=[];
 		foreach ($semain as $value) {
 			$temoin = false;
-			foreach ($semaine as $value2) {
+			foreach ($semaine as $key => $value2) {
 				if ($value['date'] == $value2['date']) {
-					$value2['nombre'] += 1;
+					$semaine[$key]['nombre'] = $semaine[$key]['nombre']+1;
 					$temoin = true;
 				}
 			}
@@ -180,17 +180,6 @@ if(isset($_GET) && isset($_GET['p'])){
 		break;
 		
 
-
-/*
-	case 'object':
-		$object = getObjectByCategory($_GET['id_cat']);
-		require('vue/objectVue.php');
-		
-		break;
-
-
-	
-		*/
 	
 	default:
 		header('Location: .?p=nom');

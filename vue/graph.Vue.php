@@ -10,7 +10,8 @@
 		<div id="ht">HT : <?php echo $valueSt*0.80; ?> €</div>
 		<div id="ttc">TTC : <?php echo $valueSt; ?> €</div>
 	</div>
-	<div id="graphContainer"><canvas id="myChart" width="200" height="200"></canvas></div>
+	<div class="graphContainer"><canvas id="mois" width="200" height="200"></canvas></div>
+	<div class="graphContainer"><canvas id="semaine" width="200" height="200"></canvas></div>
 	
 	<a href=".?p=admin">Retour</a>
 
@@ -23,24 +24,43 @@
 <script src="JS/graph.js"></script>
 <script type="text/javascript">
 
-	var ctx = 'myChart';
-	var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        datasets: [{
-            label: '# of Votes',
-            data: mois,
-            
-            borderWidth: 1
-        }]
-    },
-    options: {
-        parsing:{
-        	xAxisKey: 'date',
-        	yAxisKey: 'nombre'
-        }
-    }
-});
+	var ctx = 'mois';
+	var graphMois = new Chart(ctx, {
+	    type: 'bar',
+	    data: {
+	        datasets: [{
+	            label: '# de transaction',
+	            data: mois,
+	            
+	            borderWidth: 1
+	        }]
+	    },
+	    options: {
+	        parsing:{
+	        	xAxisKey: 'date',
+	        	yAxisKey: 'nombre'
+	        }
+	    }
+	});
+
+	var ctx2 = 'semaine';
+	var graphSemaine = new Chart(ctx2, {
+	    type: 'bar',
+	    data: {
+	        datasets: [{
+	            label: '# de transaction',
+	            data: semaine,
+	            
+	            borderWidth: 1
+	        }]
+	    },
+	    options: {
+	        parsing:{
+	        	xAxisKey: 'date',
+	        	yAxisKey: 'nombre'
+	        }
+	    }
+	});
 </script>
 </body>
 </html>
