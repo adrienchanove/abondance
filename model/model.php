@@ -175,3 +175,57 @@ function fluxDiff($day){
 	}
 	return $liste;
 }
+
+function getNbFluxUser($mode = NULL){
+
+	if ($mode === NULL) {
+		$where = '';
+	}else{
+		$where = " WHERE flux.mode = '$mode'";
+	}
+	global $bdd;
+
+	$req = $bdd->query("SELECT USER.nom FROM `flux` JOIN USER ON USER.id = flux.idpers".$where);
+	$liste=[];
+	while($data = $req->fetch()){
+		$liste[] = $data;
+	}
+	return $liste;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function adaptater($input, $labelCommun){
+	$output = [];
+	foreach ($input as $value) {
+		$temoin = false;
+		foreach ($output as $key => $value2) {
+			if ($value[$labelCommun] == $value2[$labelCommun]) {
+				$output[$key]['nombre'] = $output[$key]['nombre']+1;
+				$temoin = true;
+			}
+		}
+		if (!$temoin) {
+			$output[] = array($labelCommun => $value[$labelCommun],'nombre' => 1 );
+		}
+	}
+	$output2 = [];
+	foreach ($output as  $value) {
+		$output2['label'][]  = $value[$labelCommun];
+		$output2['nombre'][] = $value['nombre'];
+	}
+	return $output2;
+}

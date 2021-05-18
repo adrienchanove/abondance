@@ -141,6 +141,7 @@ if(isset($_GET) && isset($_GET['p'])){
 		$valueSt = valueStock();
 		$semain = fluxDiff(7);
 		$moi = fluxDiff(30);
+		
 
 		$semaine=[];
 		foreach ($semain as $value) {
@@ -169,6 +170,14 @@ if(isset($_GET) && isset($_GET['p'])){
 				$mois[] = array('date' => $value['date'],'nombre' => 1 );
 			}
 		}
+
+		$fluxRD = adaptater(getNbFluxUser(),'nom');
+		$fluxD  = adaptater(getNbFluxUser('D'),'nom');
+		$fluxR  = adaptater(getNbFluxUser('R'),'nom');
+
+
+
+
 		require('vue/graph.Vue.php');
 		break;
 

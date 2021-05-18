@@ -7,11 +7,35 @@
 </head>
 <body>
 	<div id="valueStock">
+		<h2><u>Valeur du stock:</u></h2>
 		<div id="ht">HT : <?php echo $valueSt*0.80; ?> €</div>
 		<div id="ttc">TTC : <?php echo $valueSt; ?> €</div>
 	</div>
-	<div class="graphContainer"><canvas id="mois" width="200" height="200"></canvas></div>
-	<div class="graphContainer"><canvas id="semaine" width="200" height="200"></canvas></div>
+
+	<div class="graphContainer">
+		<h2>Flux 30 derniers jours</h2>
+		<canvas id="mois" width="200" height="200"></canvas>
+	</div>
+
+	<div class="graphContainer">
+		<h2>Flux 7 derniers jours</h2>
+		<canvas id="semaine" width="200" height="200"></canvas>
+	</div>
+
+	<div class="graphContainer">
+		<h2>Flux Depot + Retrait par personne</h2>
+		<canvas id="consomateurRD" width="200" height="200"></canvas>
+	</div>
+
+	<div class="graphContainer">
+		<h2>Flux Retrait par personne</h2>
+		<canvas id="consomateurR" width="200" height="200"></canvas>
+	</div>
+
+	<div class="graphContainer">
+		<h2>Flux Depot par personne</h2>
+		<canvas id="consomateurD" width="200" height="200"></canvas>
+	</div>
 	
 	<a href=".?p=admin">Retour</a>
 
@@ -19,48 +43,15 @@
 	<script type="text/javascript">
 		let semaine = <?php echo json_encode($semaine); ?>;
 		let mois = <?php echo json_encode($mois); ?>;
+		let consomateurRD = <?php echo json_encode($fluxRD); ?>;
+		let consomateurR  = <?php echo json_encode($fluxR); ?>;
+		let consomateurD  = <?php echo json_encode($fluxD); ?>;
 	</script>
 <script src="JS/chartjs.js"></script>
 <script src="JS/graph.js"></script>
 <script type="text/javascript">
 
-	var ctx = 'mois';
-	var graphMois = new Chart(ctx, {
-	    type: 'bar',
-	    data: {
-	        datasets: [{
-	            label: '# de transaction',
-	            data: mois,
-	            
-	            borderWidth: 1
-	        }]
-	    },
-	    options: {
-	        parsing:{
-	        	xAxisKey: 'date',
-	        	yAxisKey: 'nombre'
-	        }
-	    }
-	});
 
-	var ctx2 = 'semaine';
-	var graphSemaine = new Chart(ctx2, {
-	    type: 'bar',
-	    data: {
-	        datasets: [{
-	            label: '# de transaction',
-	            data: semaine,
-	            
-	            borderWidth: 1
-	        }]
-	    },
-	    options: {
-	        parsing:{
-	        	xAxisKey: 'date',
-	        	yAxisKey: 'nombre'
-	        }
-	    }
-	});
 </script>
 </body>
 </html>
