@@ -20,7 +20,7 @@
         </div>
         <button id="buyButton" onclick="window.location.href = '.?p=valider&mode='+choix+'&panier='+JSON.stringify(listePanier)" >Valider le ####</button>
         <div id="userInfoFrame">
-            <img id="userInfoIco" src="images/ico_user.png">
+            <img id="userInfoIco" src="Images/ico_user.png">
             <div id="userInfoText">
                 GolfHotel
                 <br/>
