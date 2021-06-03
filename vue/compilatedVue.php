@@ -29,13 +29,13 @@
         </div>
         
         <button id="buttonExit" onclick="window.location.href = '.'">
-            <img id="buttonExitIco" src="images/ico_exit.png">
+            <img id="buttonExitIco" src="Images/ico_exit.png">
         </button>
 		<button id="buttonAdd" onclick="window.location.href = '.?p=admin'">
-			<img id="buttonAddIco" src="images/ico_add.png">
+			<img id="buttonAddIco" src="Images/ico_add.png">
 		</button>
 		<button id="buttonSearch" onclick="showSearch()">
-			<img id="buttonSearchIco" src="images/ico_search.png">
+			<img id="buttonSearchIco" src="Images/ico_search.png">
 		</button>
         <div id="actionSelectButtonFrame">
             <button class="buttonAction" onclick="selectAction(this);">Retrait</button>
