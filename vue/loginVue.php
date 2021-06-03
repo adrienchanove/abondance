@@ -21,7 +21,7 @@
                     {
                 ?>
                     
-                    <img class="userIco" src="images/ico_user.png" alt="icone personnage">
+                    <img class="userIco" src="Images/ico_user.png" alt="icone personnage">
                     <button class="userFrame" onclick="window.location.href = '.?p=nom&id=<?= htmlspecialchars($data['id']) ?>';" ><?= htmlspecialchars($data['nom']) ?></button>
 
                 <?php
