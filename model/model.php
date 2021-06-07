@@ -3,7 +3,7 @@
 //connexion préliminaire à la base de donnée
 try
 {
-    $bdd = new PDO('mysql:host=10.0.0.138;dbname=stockage;charset=utf8', 'admin', 'arrow');
+    $bdd = new PDO('mysql:host=localhost;dbname=stockage;charset=utf8', 'root', '');
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch(Exception $e)
